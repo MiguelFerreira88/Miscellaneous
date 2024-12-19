@@ -184,10 +184,15 @@ class TPCDS:
                     query_text = f.read()
 
                     # Internal loop to run the same query multiple times (configurable)
-                    for i in range(queries_repeat_times):
+                   for run_id in range(num_runs):
+    # Loop to execute the same query multiple times
+    for i in range(queries_repeat_times):
+        print(f"\nRun {run_id} - Starting attempt {i + 1} for queries...")
 
-                        print(f"\nRun {run_id} - query {query} - attempt {i} - starting...")
-
+        for j, query in enumerate(queries):
+            # Log each query execution within the nested loop
+            print(f"Executing query {j + 1}/{len(queries)}: {query}")
+            
                         # Add a configurable sleep time (default 1 sec) before each query execution
                         time.sleep(sleep_time)
                         # Set the job group and description to the query name
