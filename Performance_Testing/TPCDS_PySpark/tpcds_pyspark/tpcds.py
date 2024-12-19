@@ -187,6 +187,7 @@ class TPCDS:
                     for i in range(queries_repeat_times):
 
                         print(f"\nRun {run_id} - query {query} - attempt {i} - starting...")
+                        print(f"Query being executed:\n{query_text}\n")
 
                         # Add a configurable sleep time (default 1 sec) before each query execution
                         time.sleep(sleep_time)
